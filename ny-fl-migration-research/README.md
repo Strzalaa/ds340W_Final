@@ -12,6 +12,7 @@ On Windows, **Git for Windows** (includes Git Bash) is recommended, or use WSL.
 ## 1. Clone the repository
 
 ```bash
+cd Downloads
 git clone https://github.com/Strzalaa/ds340W_Final.git
 cd ds340W_Final/ny-fl-migration-research
 ```
