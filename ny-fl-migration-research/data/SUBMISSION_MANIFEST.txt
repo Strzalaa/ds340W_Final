@@ -1,0 +1,25 @@
+Generated (UTC): 2026-04-19T21:28:42.233837+00:00
+
+=== pipeline environment (at manifest time) ===
+USE_SAMPLE_IRS=''
+USE_SAMPLE_COVARIATES=''
+HOUSING_BACKEND=''
+data_mode=production
+
+=== data/processed ===
+county_covariates_ny_fl.csv	bytes=33354	sha256=e4184f5b4b197d4b1cc64b525332ea833c5c5ab2bc14121d26d5bf06a6480648
+county_housing_gbdt_predictions.csv	bytes=17056	sha256=21c9e1906440a9d08599a62047718d31fa7ebaafcb6735aa4f39bdd3b879a884
+ny_fl_dyadic_2122.csv	bytes=380138	sha256=5c0056b50c80d719ddd80da835cc6062b6780bb12f94cb9f706fd1e20c67d702
+ny_fl_flows_2122.csv	bytes=33151	sha256=5f7ec43311476bf9f69ec7f14c18ee1ced0690d7cedaff3f71614c90ba4fe20c
+ablation_glm_poisson_results.txt	bytes=10305	sha256=059a92683990d32f85cd9acea9b766c4318353415dceb62eaa2251184c6353ea
+ablation_ols_results.txt	bytes=15968	sha256=ec5b8f49d0c359da4d14463afacb923a55bf9652e51b04883094e47ceb8f5dd1
+dyadic_missingness_summary.txt	bytes=301	sha256=7b33e6bf3c3d50b57735593b7e4be881d674a5094ed588ceb5c609e103fdd9bf
+regression_layer1_ols_summary.txt	bytes=7556	sha256=2d12c2b3ca74f077c25bd009ccbe25436d01c47a16e0c642b81da58672f300bf
+regression_layer1_twoway_fe_summary.txt	bytes=8535	sha256=c3f5c4c8dd6a9a0c092241102bec1dfa93dcbfcdb2c516c1dec3732f4f153458
+regression_layer2_count_glm_summary.txt	bytes=19008	sha256=da189152d21bc7d0cdc4814a7cded5fe1013cf59f3b9f29eadc4d4ad813148be
+regression_ols_log_flow_summary.txt	bytes=7556	sha256=2d12c2b3ca74f077c25bd009ccbe25436d01c47a16e0c642b81da58672f300bf
+
+=== data/raw (if present) ===
+countyoutflow2122.csv	bytes=4468798	sha256=51b988a3b170e37a45f1598bfbe18e136ef3236dcda7227b458e6714cf0535e4
+2020_Gaz_counties_national.txt	bytes=647629	sha256=0f309672a9aa8b1bd34cbcb62d84e7e1bdbb91ceb977f1cbc9d25ab85668c13f
+countypres_2000-2024.csv	bytes=10222208	sha256=9299583148f5f8264baf50b5d929c260699c46d915909b13ea3c3850918946f8	(county presidential merge source for script 02; canonical name is county_election_2020.csv)

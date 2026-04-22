@@ -1,0 +1,208 @@
+Z-scored continuous predictors (mean 0, SD 1): abs_diff_dem_two_party_share, abs_diff_log_pop_density, abs_diff_pct_nh_white, log_d_population, dyadic_housing_gap, dyadic_affordability_gap, abs_diff_affordability_index
+Offset: log(origin population); log_o_population removed from mean structure.
+=== Layer 2 — GEE Poisson (groups = origin county, independence) ===
+                               GEE Regression Results                              
+===================================================================================
+Dep. Variable:                   n_returns   No. Observations:                  389
+Model:                                 GEE   No. clusters:                       25
+Method:                        Generalized   Min. cluster size:                   1
+                      Estimating Equations   Max. cluster size:                  31
+Family:                            Poisson   Mean cluster size:                15.6
+Dependence structure:         Independence   Num. iterations:                     2
+Date:                     Sun, 19 Apr 2026   Scale:                           1.000
+Covariance type:                    robust   Time:                         17:28:22
+========================================================================================================
+                                           coef    std err          z      P>|z|      [0.025      0.975]
+--------------------------------------------------------------------------------------------------------
+abs_diff_dem_two_party_share            -0.0652      0.081     -0.807      0.420      -0.224       0.093
+abs_diff_log_pop_density                 0.2481      0.066      3.736      0.000       0.118       0.378
+abs_diff_pct_nh_white                   -0.3046      0.062     -4.892      0.000      -0.427      -0.183
+dest_more_dem                            0.0876      0.159      0.553      0.581      -0.223       0.398
+log_distance_km                         -0.9772      0.014    -70.859      0.000      -1.004      -0.950
+log_d_population                         0.7142      0.083      8.620      0.000       0.552       0.877
+dest_lower_rent_than_origin              0.5542      0.215      2.582      0.010       0.134       0.975
+dest_lower_rent_pressure_than_origin    -0.2709      0.183     -1.478      0.140      -0.630       0.088
+dyadic_housing_gap                       0.2494      0.092      2.721      0.007       0.070       0.429
+dyadic_affordability_gap                -0.0581      0.070     -0.831      0.406      -0.195       0.079
+abs_diff_affordability_index             0.1220      0.078      1.573      0.116      -0.030       0.274
+==============================================================================
+Skew:                          6.4053   Kurtosis:                      73.8637
+Centered skew:                 6.6951   Centered kurtosis:             80.8495
+==============================================================================
+=== Layer 2 — GLM Poisson (IID SE), with offset ===
+                 Generalized Linear Model Regression Results                  
+==============================================================================
+Dep. Variable:              n_returns   No. Observations:                  389
+Model:                            GLM   Df Residuals:                      378
+Model Family:                 Poisson   Df Model:                           10
+Link Function:                    Log   Scale:                          1.0000
+Method:                          IRLS   Log-Likelihood:                -6576.0
+Date:                Sun, 19 Apr 2026   Deviance:                       10821.
+Time:                        17:28:22   Pearson chi2:                 1.26e+04
+No. Iterations:                     5   Pseudo R-squ. (CS):              1.000
+Covariance Type:            nonrobust                                         
+========================================================================================================
+                                           coef    std err          z      P>|z|      [0.025      0.975]
+--------------------------------------------------------------------------------------------------------
+abs_diff_dem_two_party_share            -0.0652      0.010     -6.714      0.000      -0.084      -0.046
+abs_diff_log_pop_density                 0.2481      0.009     28.494      0.000       0.231       0.265
+abs_diff_pct_nh_white                   -0.3046      0.007    -42.395      0.000      -0.319      -0.291
+dest_more_dem                            0.0876      0.016      5.586      0.000       0.057       0.118
+log_distance_km                         -0.9772      0.002   -600.349      0.000      -0.980      -0.974
+log_d_population                         0.7142      0.005    130.296      0.000       0.703       0.725
+dest_lower_rent_than_origin              0.5542      0.021     26.066      0.000       0.513       0.596
+dest_lower_rent_pressure_than_origin    -0.2709      0.015    -18.435      0.000      -0.300      -0.242
+dyadic_housing_gap                       0.2494      0.011     22.008      0.000       0.227       0.272
+dyadic_affordability_gap                -0.0581      0.011     -5.087      0.000      -0.081      -0.036
+abs_diff_affordability_index             0.1220      0.007     17.025      0.000       0.108       0.136
+========================================================================================================
+McFadden pseudo R² (vs offset + scalar intercept): 0.6989  (Cox–Snell pseudo R² in the header can stay at 1.0 for Poisson; prefer McFadden or deviance ratio.)
+=== GLM Poisson — cluster-robust SE by origin, with offset ===
+                 Generalized Linear Model Regression Results                  
+==============================================================================
+Dep. Variable:              n_returns   No. Observations:                  389
+Model:                            GLM   Df Residuals:                      378
+Model Family:                 Poisson   Df Model:                           10
+Link Function:                    Log   Scale:                          1.0000
+Method:                          IRLS   Log-Likelihood:                -6576.0
+Date:                Sun, 19 Apr 2026   Deviance:                       10821.
+Time:                        17:28:22   Pearson chi2:                 1.26e+04
+No. Iterations:                     5   Pseudo R-squ. (CS):              1.000
+Covariance Type:              cluster                                         
+========================================================================================================
+                                           coef    std err          z      P>|z|      [0.025      0.975]
+--------------------------------------------------------------------------------------------------------
+abs_diff_dem_two_party_share            -0.0652      0.084     -0.780      0.435      -0.229       0.099
+abs_diff_log_pop_density                 0.2481      0.069      3.613      0.000       0.114       0.383
+abs_diff_pct_nh_white                   -0.3046      0.064     -4.731      0.000      -0.431      -0.178
+dest_more_dem                            0.0876      0.164      0.534      0.593      -0.234       0.409
+log_distance_km                         -0.9772      0.014    -68.527      0.000      -1.005      -0.949
+log_d_population                         0.7142      0.086      8.337      0.000       0.546       0.882
+dest_lower_rent_than_origin              0.5542      0.222      2.497      0.013       0.119       0.989
+dest_lower_rent_pressure_than_origin    -0.2709      0.190     -1.429      0.153      -0.642       0.101
+dyadic_housing_gap                       0.2494      0.095      2.631      0.009       0.064       0.435
+dyadic_affordability_gap                -0.0581      0.072     -0.804      0.422      -0.200       0.084
+abs_diff_affordability_index             0.1220      0.080      1.521      0.128      -0.035       0.279
+========================================================================================================
+=== Layer 2 — GLM Negative Binomial (alpha=1.0), with offset ===
+                 Generalized Linear Model Regression Results                  
+==============================================================================
+Dep. Variable:              n_returns   No. Observations:                  389
+Model:                            GLM   Df Residuals:                      378
+Model Family:        NegativeBinomial   Df Model:                           10
+Link Function:                    Log   Scale:                          1.0000
+Method:                          IRLS   Log-Likelihood:                -2053.0
+Date:                Sun, 19 Apr 2026   Deviance:                       89.922
+Time:                        17:28:22   Pearson chi2:                     108.
+No. Iterations:                    12   Pseudo R-squ. (CS):             0.3534
+Covariance Type:            nonrobust                                         
+========================================================================================================
+                                           coef    std err          z      P>|z|      [0.025      0.975]
+--------------------------------------------------------------------------------------------------------
+abs_diff_dem_two_party_share            -0.1274      0.094     -1.360      0.174      -0.311       0.056
+abs_diff_log_pop_density                 0.0740      0.087      0.846      0.398      -0.097       0.245
+abs_diff_pct_nh_white                   -0.2658      0.076     -3.492      0.000      -0.415      -0.117
+dest_more_dem                            0.0514      0.162      0.317      0.751      -0.267       0.369
+log_distance_km                         -0.9618      0.014    -67.716      0.000      -0.990      -0.934
+log_d_population                         0.5715      0.063      9.046      0.000       0.448       0.695
+dest_lower_rent_than_origin              0.3101      0.193      1.608      0.108      -0.068       0.688
+dest_lower_rent_pressure_than_origin    -0.0174      0.204     -0.085      0.932      -0.418       0.383
+dyadic_housing_gap                       0.1507      0.111      1.356      0.175      -0.067       0.369
+dyadic_affordability_gap                -0.0272      0.109     -0.249      0.803      -0.241       0.186
+abs_diff_affordability_index             0.0582      0.076      0.767      0.443      -0.091       0.207
+========================================================================================================
+
+=== Layer 2 — REDUCED spec (core politics/density/race + gravity + dest pop; origin pop as offset; no rent / affordability / ML gap terms) ===
+Z-scored continuous predictors (mean 0, SD 1): abs_diff_dem_two_party_share, abs_diff_log_pop_density, abs_diff_pct_nh_white, log_d_population
+Offset: log(origin population); log_o_population removed from mean structure.
+=== Layer 2 — GEE Poisson (groups = origin county, independence) ===
+                               GEE Regression Results                              
+===================================================================================
+Dep. Variable:                   n_returns   No. Observations:                  389
+Model:                                 GEE   No. clusters:                       25
+Method:                        Generalized   Min. cluster size:                   1
+                      Estimating Equations   Max. cluster size:                  31
+Family:                            Poisson   Mean cluster size:                15.6
+Dependence structure:         Independence   Num. iterations:                     2
+Date:                     Sun, 19 Apr 2026   Scale:                           1.000
+Covariance type:                    robust   Time:                         17:28:22
+================================================================================================
+                                   coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------------------------
+abs_diff_dem_two_party_share    -0.1345      0.044     -3.084      0.002      -0.220      -0.049
+abs_diff_log_pop_density         0.1753      0.063      2.805      0.005       0.053       0.298
+abs_diff_pct_nh_white           -0.2594      0.057     -4.570      0.000      -0.371      -0.148
+dest_more_dem                    0.1703      0.149      1.145      0.252      -0.121       0.462
+log_distance_km                 -0.9506      0.010    -98.311      0.000      -0.970      -0.932
+log_d_population                 0.7501      0.099      7.561      0.000       0.556       0.945
+==============================================================================
+Skew:                          6.8195   Kurtosis:                      80.8952
+Centered skew:                 6.9719   Centered kurtosis:             84.7187
+==============================================================================
+=== Layer 2 — GLM Poisson (IID SE), with offset ===
+                 Generalized Linear Model Regression Results                  
+==============================================================================
+Dep. Variable:              n_returns   No. Observations:                  389
+Model:                            GLM   Df Residuals:                      383
+Model Family:                 Poisson   Df Model:                            5
+Link Function:                    Log   Scale:                          1.0000
+Method:                          IRLS   Log-Likelihood:                -7289.6
+Date:                Sun, 19 Apr 2026   Deviance:                       12248.
+Time:                        17:28:22   Pearson chi2:                 1.47e+04
+No. Iterations:                     5   Pseudo R-squ. (CS):              1.000
+Covariance Type:            nonrobust                                         
+================================================================================================
+                                   coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------------------------
+abs_diff_dem_two_party_share    -0.1345      0.009    -15.710      0.000      -0.151      -0.118
+abs_diff_log_pop_density         0.1753      0.008     22.558      0.000       0.160       0.191
+abs_diff_pct_nh_white           -0.2594      0.006    -46.229      0.000      -0.270      -0.248
+dest_more_dem                    0.1703      0.014     11.774      0.000       0.142       0.199
+log_distance_km                 -0.9506      0.001  -1405.673      0.000      -0.952      -0.949
+log_d_population                 0.7501      0.005    138.423      0.000       0.739       0.761
+================================================================================================
+McFadden pseudo R² (vs offset + scalar intercept): 0.6662  (Cox–Snell pseudo R² in the header can stay at 1.0 for Poisson; prefer McFadden or deviance ratio.)
+=== GLM Poisson — cluster-robust SE by origin, with offset ===
+                 Generalized Linear Model Regression Results                  
+==============================================================================
+Dep. Variable:              n_returns   No. Observations:                  389
+Model:                            GLM   Df Residuals:                      383
+Model Family:                 Poisson   Df Model:                            5
+Link Function:                    Log   Scale:                          1.0000
+Method:                          IRLS   Log-Likelihood:                -7289.6
+Date:                Sun, 19 Apr 2026   Deviance:                       12248.
+Time:                        17:28:22   Pearson chi2:                 1.47e+04
+No. Iterations:                     5   Pseudo R-squ. (CS):              1.000
+Covariance Type:              cluster                                         
+================================================================================================
+                                   coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------------------------
+abs_diff_dem_two_party_share    -0.1345      0.045     -3.003      0.003      -0.222      -0.047
+abs_diff_log_pop_density         0.1753      0.064      2.730      0.006       0.049       0.301
+abs_diff_pct_nh_white           -0.2594      0.058     -4.449      0.000      -0.374      -0.145
+dest_more_dem                    0.1703      0.153      1.114      0.265      -0.129       0.470
+log_distance_km                 -0.9506      0.010    -95.702      0.000      -0.970      -0.931
+log_d_population                 0.7501      0.102      7.360      0.000       0.550       0.950
+================================================================================================
+=== Layer 2 — GLM Negative Binomial (alpha=1.0), with offset ===
+                 Generalized Linear Model Regression Results                  
+==============================================================================
+Dep. Variable:              n_returns   No. Observations:                  389
+Model:                            GLM   Df Residuals:                      383
+Model Family:        NegativeBinomial   Df Model:                            5
+Link Function:                    Log   Scale:                          1.0000
+Method:                          IRLS   Log-Likelihood:                -2054.9
+Date:                Sun, 19 Apr 2026   Deviance:                       93.620
+Time:                        17:28:22   Pearson chi2:                     114.
+No. Iterations:                    10   Pseudo R-squ. (CS):             0.3472
+Covariance Type:            nonrobust                                         
+================================================================================================
+                                   coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------------------------
+abs_diff_dem_two_party_share    -0.1445      0.081     -1.775      0.076      -0.304       0.015
+abs_diff_log_pop_density         0.0619      0.075      0.828      0.408      -0.085       0.208
+abs_diff_pct_nh_white           -0.2248      0.060     -3.775      0.000      -0.341      -0.108
+dest_more_dem                    0.0642      0.156      0.411      0.681      -0.242       0.371
+log_distance_km                 -0.9428      0.006   -159.435      0.000      -0.954      -0.931
+log_d_population                 0.5887      0.060      9.889      0.000       0.472       0.705
+================================================================================================

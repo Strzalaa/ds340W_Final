@@ -1,0 +1,7 @@
+backend,backend_label,split,n_rows,mae,rmse,error,target,feature_set
+lgbm,LightGBM,holdout_0.25,129,49868.4926802922,69049.13333865938,,median_home_value,home_value
+sklearn_gbr,sklearn GradientBoostingRegressor,holdout_0.25,129,35745.55365864656,54680.30396689317,,median_home_value,home_value
+hist_gbrt,sklearn HistGradientBoostingRegressor,holdout_0.25,129,51504.36580761522,71383.1246959729,,median_home_value,home_value
+lgbm,LightGBM,holdout_0.25,129,0.00224789824229864,0.002892598329189069,,affordability_index,affordability
+sklearn_gbr,sklearn GradientBoostingRegressor,holdout_0.25,129,0.0022478943021683544,0.0029264471831411698,,affordability_index,affordability
+hist_gbrt,sklearn HistGradientBoostingRegressor,holdout_0.25,129,0.0022926245545960232,0.0028758044432995516,,affordability_index,affordability

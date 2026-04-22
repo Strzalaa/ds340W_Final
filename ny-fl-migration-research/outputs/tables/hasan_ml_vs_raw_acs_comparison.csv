@@ -1,0 +1,4 @@
+spec,deviance,AIC,n_obs,notes
+full_ml_housing_gaps,10820.72810853238,13173.925560470772,389,"ML dyadic_housing_gap, dyadic_affordability_gap, rent dummies, abs_diff_affordability_index + gravity/politics (matches Layer-2 full spec)."
+raw_acs_dyadic_only,11818.030064367293,14167.227516305691,389,"abs_diff_median_home_value, abs_diff_median_gross_rent, abs_diff_pct_owner_occupied + same gravity/politics core; no ML predictions."
+no_housing_covariates,12248.033666382762,14591.231118321159,389,Politics + density/race + distance + dest pop only (matches GLM no_housing knockout block).

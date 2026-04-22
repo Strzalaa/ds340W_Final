@@ -1,0 +1,111 @@
+GLM Poisson block knockouts (Layer 2 — offset=log(origin population); same predictors as scripts/05)
+
+=== full ===  (predictors: abs_diff_dem_two_party_share, abs_diff_log_pop_density, abs_diff_pct_nh_white, dest_more_dem, log_distance_km, log_d_population, dest_lower_rent_than_origin, dest_lower_rent_pressure_than_origin, dyadic_housing_gap, dyadic_affordability_gap, abs_diff_affordability_index)
+                 Generalized Linear Model Regression Results                  
+==============================================================================
+Dep. Variable:              n_returns   No. Observations:                  389
+Model:                            GLM   Df Residuals:                      378
+Model Family:                 Poisson   Df Model:                           10
+Link Function:                    Log   Scale:                          1.0000
+Method:                          IRLS   Log-Likelihood:                -6576.0
+Date:                Sun, 19 Apr 2026   Deviance:                       10821.
+Time:                        17:28:25   Pearson chi2:                 1.26e+04
+No. Iterations:                     5   Pseudo R-squ. (CS):              1.000
+Covariance Type:            nonrobust                                         
+========================================================================================================
+                                           coef    std err          z      P>|z|      [0.025      0.975]
+--------------------------------------------------------------------------------------------------------
+abs_diff_dem_two_party_share            -0.0652      0.010     -6.714      0.000      -0.084      -0.046
+abs_diff_log_pop_density                 0.2481      0.009     28.494      0.000       0.231       0.265
+abs_diff_pct_nh_white                   -0.3046      0.007    -42.395      0.000      -0.319      -0.291
+dest_more_dem                            0.0876      0.016      5.586      0.000       0.057       0.118
+log_distance_km                         -0.9772      0.002   -600.349      0.000      -0.980      -0.974
+log_d_population                         0.7142      0.005    130.296      0.000       0.703       0.725
+dest_lower_rent_than_origin              0.5542      0.021     26.066      0.000       0.513       0.596
+dest_lower_rent_pressure_than_origin    -0.2709      0.015    -18.435      0.000      -0.300      -0.242
+dyadic_housing_gap                       0.2494      0.011     22.008      0.000       0.227       0.272
+dyadic_affordability_gap                -0.0581      0.011     -5.087      0.000      -0.081      -0.036
+abs_diff_affordability_index             0.1220      0.007     17.025      0.000       0.108       0.136
+========================================================================================================
+Null deviance: 41349.0279  Deviance: 10820.7281  N: 389
+
+=== no_political ===  (predictors: abs_diff_log_pop_density, abs_diff_pct_nh_white, log_distance_km, log_d_population, dest_lower_rent_than_origin, dest_lower_rent_pressure_than_origin, dyadic_housing_gap, dyadic_affordability_gap, abs_diff_affordability_index)
+                 Generalized Linear Model Regression Results                  
+==============================================================================
+Dep. Variable:              n_returns   No. Observations:                  389
+Model:                            GLM   Df Residuals:                      380
+Model Family:                 Poisson   Df Model:                            8
+Link Function:                    Log   Scale:                          1.0000
+Method:                          IRLS   Log-Likelihood:                -6614.1
+Date:                Sun, 19 Apr 2026   Deviance:                       10897.
+Time:                        17:28:25   Pearson chi2:                 1.27e+04
+No. Iterations:                     5   Pseudo R-squ. (CS):              1.000
+Covariance Type:            nonrobust                                         
+========================================================================================================
+                                           coef    std err          z      P>|z|      [0.025      0.975]
+--------------------------------------------------------------------------------------------------------
+abs_diff_log_pop_density                 0.2152      0.007     28.698      0.000       0.200       0.230
+abs_diff_pct_nh_white                   -0.3066      0.007    -43.997      0.000      -0.320      -0.293
+log_distance_km                         -0.9791      0.002   -609.619      0.000      -0.982      -0.976
+log_d_population                         0.7185      0.005    131.903      0.000       0.708       0.729
+dest_lower_rent_than_origin              0.6159      0.020     30.635      0.000       0.576       0.655
+dest_lower_rent_pressure_than_origin    -0.2747      0.015    -18.793      0.000      -0.303      -0.246
+dyadic_housing_gap                       0.2625      0.011     23.387      0.000       0.241       0.285
+dyadic_affordability_gap                -0.0064      0.010     -0.655      0.512      -0.026       0.013
+abs_diff_affordability_index             0.1206      0.007     16.826      0.000       0.107       0.135
+========================================================================================================
+Null deviance: 41349.0279  Deviance: 10896.9544  N: 389
+
+=== no_housing ===  (predictors: abs_diff_dem_two_party_share, abs_diff_log_pop_density, abs_diff_pct_nh_white, dest_more_dem, log_distance_km, log_d_population)
+                 Generalized Linear Model Regression Results                  
+==============================================================================
+Dep. Variable:              n_returns   No. Observations:                  389
+Model:                            GLM   Df Residuals:                      383
+Model Family:                 Poisson   Df Model:                            5
+Link Function:                    Log   Scale:                          1.0000
+Method:                          IRLS   Log-Likelihood:                -7289.6
+Date:                Sun, 19 Apr 2026   Deviance:                       12248.
+Time:                        17:28:25   Pearson chi2:                 1.47e+04
+No. Iterations:                     5   Pseudo R-squ. (CS):              1.000
+Covariance Type:            nonrobust                                         
+================================================================================================
+                                   coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------------------------
+abs_diff_dem_two_party_share    -0.1345      0.009    -15.710      0.000      -0.151      -0.118
+abs_diff_log_pop_density         0.1753      0.008     22.558      0.000       0.160       0.191
+abs_diff_pct_nh_white           -0.2594      0.006    -46.229      0.000      -0.270      -0.248
+dest_more_dem                    0.1703      0.014     11.774      0.000       0.142       0.199
+log_distance_km                 -0.9506      0.001  -1405.673      0.000      -0.952      -0.949
+log_d_population                 0.7501      0.005    138.423      0.000       0.739       0.761
+================================================================================================
+Null deviance: 41349.0279  Deviance: 12248.0337  N: 389
+
+=== no_distance ===  (predictors: abs_diff_dem_two_party_share, abs_diff_log_pop_density, abs_diff_pct_nh_white, dest_more_dem, log_d_population, dest_lower_rent_than_origin, dest_lower_rent_pressure_than_origin, dyadic_housing_gap, dyadic_affordability_gap, abs_diff_affordability_index)
+                 Generalized Linear Model Regression Results                  
+==============================================================================
+Dep. Variable:              n_returns   No. Observations:                  389
+Model:                            GLM   Df Residuals:                      378
+Model Family:                 Poisson   Df Model:                           10
+Link Function:                    Log   Scale:                          1.0000
+Method:                          IRLS   Log-Likelihood:                -6576.0
+Date:                Sun, 19 Apr 2026   Deviance:                       10821.
+Time:                        17:28:25   Pearson chi2:                 1.26e+04
+No. Iterations:                     5   Pseudo R-squ. (CS):              1.000
+Covariance Type:            nonrobust                                         
+========================================================================================================
+                                           coef    std err          z      P>|z|      [0.025      0.975]
+--------------------------------------------------------------------------------------------------------
+const                                   -9.6785      0.016   -600.349      0.000      -9.710      -9.647
+abs_diff_dem_two_party_share            -0.0652      0.010     -6.714      0.000      -0.084      -0.046
+abs_diff_log_pop_density                 0.2481      0.009     28.494      0.000       0.231       0.265
+abs_diff_pct_nh_white                   -0.3046      0.007    -42.395      0.000      -0.319      -0.291
+dest_more_dem                            0.0876      0.016      5.586      0.000       0.057       0.118
+log_d_population                         0.7142      0.005    130.296      0.000       0.703       0.725
+dest_lower_rent_than_origin              0.5542      0.021     26.066      0.000       0.513       0.596
+dest_lower_rent_pressure_than_origin    -0.2709      0.015    -18.435      0.000      -0.300      -0.242
+dyadic_housing_gap                       0.2494      0.011     22.008      0.000       0.227       0.272
+dyadic_affordability_gap                -0.0581      0.011     -5.087      0.000      -0.081      -0.036
+abs_diff_affordability_index             0.1220      0.007     17.025      0.000       0.108       0.136
+========================================================================================================
+Null deviance: 41349.0279  Deviance: 10820.7281  N: 389
+

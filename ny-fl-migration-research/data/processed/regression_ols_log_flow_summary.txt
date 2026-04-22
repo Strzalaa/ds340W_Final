@@ -1,0 +1,100 @@
+Layer 1 — log(1+returns) OLS, clustered SE by origin
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:               log_flow   R-squared:                       0.724
+Model:                            OLS   Adj. R-squared:                  0.719
+Method:                 Least Squares   F-statistic:                     2714.
+Date:                Sun, 19 Apr 2026   Prob (F-statistic):           3.41e-33
+Time:                        17:28:22   Log-Likelihood:                -269.38
+No. Observations:                 389   AIC:                             554.8
+Df Residuals:                     381   BIC:                             586.5
+Df Model:                           7                                         
+Covariance Type:              cluster                                         
+============================================================================================
+                               coef    std err          z      P>|z|      [0.025      0.975]
+--------------------------------------------------------------------------------------------
+const                       -0.1250      0.016     -7.650      0.000      -0.157      -0.093
+o_dem_two_party_share       -8.9703      1.512     -5.931      0.000     -11.935      -6.006
+d_dem_two_party_share       -9.9362      2.310     -4.301      0.000     -14.465      -5.408
+dem_origin_x_dest           16.2649      3.168      5.134      0.000      10.056      22.474
+log_distance_km             -1.2384      0.162     -7.650      0.000      -1.556      -0.921
+log_o_population             0.8976      0.087     10.357      0.000       0.728       1.068
+log_d_population             0.7399      0.089      8.330      0.000       0.566       0.914
+dyadic_housing_gap       -1.622e-07   2.41e-07     -0.674      0.500   -6.34e-07    3.09e-07
+dyadic_affordability_gap     2.2755     15.751      0.144      0.885     -28.596      33.147
+==============================================================================
+Omnibus:                       10.915   Durbin-Watson:                   1.420
+Prob(Omnibus):                  0.004   Jarque-Bera (JB):               20.618
+Skew:                           0.050   Prob(JB):                     3.33e-05
+Kurtosis:                       4.123   Cond. No.                     2.58e+20
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)
+[2] The smallest eigenvalue is 3.32e-28. This might indicate that there are
+strong multicollinearity problems or that the design matrix is singular.
+
+Layer 1 — REDUCED log(1+returns) OLS (gravity + pops only), clustered SE by origin
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:               log_flow   R-squared:                       0.652
+Model:                            OLS   Adj. R-squared:                  0.651
+Method:                 Least Squares   F-statistic:                     2571.
+Date:                Sun, 19 Apr 2026   Prob (F-statistic):           3.19e-30
+Time:                        17:28:22   Log-Likelihood:                -314.38
+No. Observations:                 389   AIC:                             634.8
+Df Residuals:                     386   BIC:                             646.7
+Df Model:                           2                                         
+Covariance Type:              cluster                                         
+====================================================================================
+                       coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------------
+const               -0.1620      0.014    -11.905      0.000      -0.189      -0.135
+log_distance_km     -1.6042      0.135    -11.905      0.000      -1.868      -1.340
+log_o_population     0.7852      0.060     13.144      0.000       0.668       0.902
+log_d_population     0.7183      0.098      7.318      0.000       0.526       0.911
+==============================================================================
+Omnibus:                        2.761   Durbin-Watson:                   1.053
+Prob(Omnibus):                  0.251   Jarque-Bera (JB):                2.601
+Skew:                           0.128   Prob(JB):                        0.272
+Kurtosis:                       3.308   Cond. No.                     2.28e+16
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)
+[2] The smallest eigenvalue is 3.44e-28. This might indicate that there are
+strong multicollinearity problems or that the design matrix is singular.
+
+Layer 1 — REDUCED log(1+returns) OLS (politics + gravity + pops, no ML housing gaps), clustered SE by origin
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:               log_flow   R-squared:                       0.723
+Model:                            OLS   Adj. R-squared:                  0.720
+Method:                 Least Squares   F-statistic:                     3153.
+Date:                Sun, 19 Apr 2026   Prob (F-statistic):           1.56e-33
+Time:                        17:28:22   Log-Likelihood:                -269.89
+No. Observations:                 389   AIC:                             551.8
+Df Residuals:                     383   BIC:                             575.6
+Df Model:                           5                                         
+Covariance Type:              cluster                                         
+=========================================================================================
+                            coef    std err          z      P>|z|      [0.025      0.975]
+-----------------------------------------------------------------------------------------
+const                    -0.1263      0.015     -8.583      0.000      -0.155      -0.097
+o_dem_two_party_share    -8.9810      1.565     -5.738      0.000     -12.048      -5.914
+d_dem_two_party_share    -9.9625      2.280     -4.370      0.000     -14.431      -5.494
+dem_origin_x_dest        16.2664      3.177      5.121      0.000      10.040      22.493
+log_distance_km          -1.2510      0.146     -8.583      0.000      -1.537      -0.965
+log_o_population          0.9147      0.064     14.205      0.000       0.788       1.041
+log_d_population          0.7349      0.094      7.806      0.000       0.550       0.919
+==============================================================================
+Omnibus:                       10.683   Durbin-Watson:                   1.402
+Prob(Omnibus):                  0.005   Jarque-Bera (JB):               19.998
+Skew:                           0.046   Prob(JB):                     4.54e-05
+Kurtosis:                       4.107   Cond. No.                     2.33e+16
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)
+[2] The smallest eigenvalue is 3.32e-28. This might indicate that there are
+strong multicollinearity problems or that the design matrix is singular.
