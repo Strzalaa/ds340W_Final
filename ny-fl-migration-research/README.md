@@ -9,7 +9,7 @@ Reproducible analysis of NY→FL county flows (IRS 2021–2022): OLS sorting mod
 ## 1. Clone the repository
 
 ```bash
-git clone <repository-url>.git
+git clone https://github.com/Strzalaa/ds340W_Final.git
 cd ny-fl-migration-research
 ```
 
