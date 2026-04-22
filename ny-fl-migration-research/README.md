@@ -1,8 +1,11 @@
 # NY → Florida migration (county-level research pipeline)
 
-Reproducible analysis of NY→FL county flows (IRS 2021–2022): OLS sorting models, gravity-style GLMs, optional boosting-based housing signals. **Run everything with `./run_all.sh`** after installing dependencies.
+Reproducible analysis of NY→FL county flows (IRS 2021–2022): OLS sorting models, gravity-style GLMs, optional boosting-based housing signals.
 
-**Requirements:** Python 3.10+ (3.11+ recommended), `pip`, and `git`. On Windows, **Git for Windows** (includes Git Bash) is needed to run the Bash driver script, or use WSL.
+**Run everything with `./run_all.sh` after installing dependencies.**
+
+**Requirements:** Python 3.10+ (3.11+ recommended), `pip`, and `git`.  
+On Windows, **Git for Windows** (includes Git Bash) is recommended, or use WSL.
 
 ---
 
@@ -10,8 +13,10 @@ Reproducible analysis of NY→FL county flows (IRS 2021–2022): OLS sorting mod
 
 ```bash
 git clone https://github.com/Strzalaa/ds340W_Final.git
-cd ny-fl-migration-research
+cd ds340W_Final/ny-fl-migration-research
 ```
+
+⚠️ **Important:** All commands below must be run inside `ny-fl-migration-research/`, where `requirements.txt` is located.
 
 ---
 
@@ -27,11 +32,10 @@ pip install -r requirements.txt
 
 ### Windows — Git Bash (recommended)
 
-`run_all.sh` is a Bash script; Git Bash matches the commands below.
-
 ```bash
 python -m venv .venv
 source .venv/Scripts/activate
+python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
@@ -40,6 +44,7 @@ pip install -r requirements.txt
 ```powershell
 python -m venv .venv
 .venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
@@ -67,7 +72,7 @@ export PATH="$(pwd)/.venv/bin:$PATH"
 
 ### Windows — PowerShell
 
-From the repo root, with `bash` available (Git for Windows or WSL):
+From the same folder:
 
 ```powershell
 $env:USE_SAMPLE_IRS=""
@@ -77,11 +82,7 @@ $env:PYTHONPATH = "$PWD\src"
 bash ./run_all.sh
 ```
 
-If `bash` is not found, install **Git for Windows** and run the **macOS / Git Bash** block from **Git Bash** in the project folder.
-
-**Success:** the script should end with:
-
-`All done. Outputs: data/processed/, outputs/figures/, outputs/tables/, data/SUBMISSION_MANIFEST.txt`
+If `bash` is not found, install Git for Windows and run from Git Bash instead.
 
 ---
 
@@ -124,13 +125,11 @@ brew install libomp
 HOUSING_BACKEND=sklearn_gbr ./run_all.sh
 ```
 
-**Offline / bundled sample data (for testing only — not for publication numbers):**
+**Offline / sample data (testing only):**
 
 ```bash
 ALLOW_SAMPLE_PIPELINE=1 USE_SAMPLE_IRS=1 USE_SAMPLE_COVARIATES=1 ./run_all.sh
 ```
-
-**Why Git Bash is suggested on Windows:** `run_all.sh` uses Bash (`unset`, `export`, `./`). PowerShell can run it via `bash ./run_all.sh` once Git Bash or WSL provides `bash`.
 
 ---
 
@@ -138,10 +137,10 @@ ALLOW_SAMPLE_PIPELINE=1 USE_SAMPLE_IRS=1 USE_SAMPLE_COVARIATES=1 ./run_all.sh
 
 | Path | Purpose |
 |------|---------|
-| `scripts/` | Pipeline scripts (`01`–`12`) and helpers |
-| `src/nyfl/` | Python package (IRS/ACS helpers, labels, model specs) |
-| `data/raw/` | Inputs you supply or scripts download |
-| `data/processed/` | Built datasets and model text outputs |
+| `scripts/` | Pipeline scripts (01–12) and helpers |
+| `src/nyfl/` | Python package |
+| `data/raw/` | Inputs |
+| `data/processed/` | Built datasets and outputs |
 | `outputs/` | Final tables and figures |
 
 ---
